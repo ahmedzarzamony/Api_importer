@@ -6,7 +6,7 @@ namespace Importer\Lib;
 require __DIR__.'/vendor/autoload.php';
 try{
     
-$x = new Importer('demo/test.csv', 'csv');
+$x = new Importer('demo/test.json', 'json');
 print_r($x->get());
 
 
