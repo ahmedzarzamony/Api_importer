@@ -6,8 +6,8 @@ namespace Importer\Lib;
 require __DIR__.'/vendor/autoload.php';
 try{
     
-$x = new Importer('gvfdc', 'csv');
-    
+$x = new Importer('demo/test.csv', 'csv');
+print_r($x->get());
 
 
 }catch(\Error $e){

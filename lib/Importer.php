@@ -14,7 +14,12 @@ class Importer
         $this->checkExists($type);
         $this->data = $data;
         $this->type = $type;
-        $this->getDriver($type);
+    }
+
+    public function get()
+    {
+        $data = $this->getDriver($this->type);
+        return $data->ConvertToArray();
     }
 
     public function checkExists($type)
@@ -25,19 +30,17 @@ class Importer
     }
     public function getDriver($type)
     {
+        $array = [];
         switch($type){
             case 'csv':
-                $this->driver = new CsvFormat($this->data);
+                $array = new CsvFormat($this->data);
                 break;
             case 'xml':
-                $this->driver = new XmlType();
+                $array = new XmlFormat($this->data);
                 break;
             default:
-                $this->driver = new JsonType();
+                $array = new JsonFormat($this->data);
         }
-    }
-    public function ConvertToArray()
-    {
-        
+        return $array;
     }
 }
