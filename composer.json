@@ -1,0 +1,17 @@
+{
+    "name": "ahmedelzarzmony/api_importer",
+    "description": "Deal with different data sources with different data format and insert it into unified database",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ahmed Elzarzamony",
+            "email": "ahmed.mrcode@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "lib"
+        ]
+    }
+}
