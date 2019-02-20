@@ -135,10 +135,10 @@ Array
 ##### Installation 
 You can add this library as a local, per-project dependency to your project using [Composer](https://getcomposer.org/):
 ```
-composer require ahmedelzarzmony/api_importer
+composer require ahmedelzarzmony/api_importer:dev-master
 ```
 
 If you only need this library during development, for instance to run your project's test suite, then you should add it as a development-time dependency:
 ```
-composer require --dev ahmedelzarzmony/api_importer
+composer require --dev ahmedelzarzmony/api_importer:dev-master
 ```
