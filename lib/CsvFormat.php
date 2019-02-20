@@ -9,7 +9,6 @@ class CsvFormat implements FormatInterface
     public function __construct($data)
     {
         $this->data = $data;
-        echo str_ireplace(__NAMESPACE__.'\\', '', __CLASS__) . ' Started <hr>';
     }
 
     public function isValid()
