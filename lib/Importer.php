@@ -19,7 +19,6 @@ class Importer
     public function get()
     {
         $data = $this->getDriver($this->type);
-        echo $data;
         return $data->ConvertToArray();
     }
 
