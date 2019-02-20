@@ -2,6 +2,7 @@
     "name": "ahmedelzarzmony/api_importer",
     "description": "Deal with different data sources with different data format and insert it into unified database",
     "keywords": ["xml", "json", "csv"],
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
