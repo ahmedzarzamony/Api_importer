@@ -1,10 +1,10 @@
 <?php 
 
-namespace Importer\Lib;
+namespace Importer\Format;
 
 interface FormatInterface{
 
-    public function isValid();
+    public function invalid($content);
     public function getContent();
     public function ConvertToArray();
 

@@ -1,6 +1,6 @@
 <?php 
 
-namespace Importer\Lib;
+namespace Importer\Format;
 
 class CsvFormat implements FormatInterface
 {
@@ -11,8 +11,13 @@ class CsvFormat implements FormatInterface
         $this->data = $data;
     }
 
-    public function isValid()
-    {}
+    public function invalid($content)
+    {
+        if(empty($content))
+            return true;
+
+        return false;
+    }
 
     public function getContent()
     {
@@ -32,7 +37,7 @@ class CsvFormat implements FormatInterface
     public function ConvertToArray()
     {
         $content = $this->getContent();
-        if(is_null($content)){
+        if($this->invalid($content)){
             throw new \Exception("The content of the given file is not valid.");
         }
         return $content;

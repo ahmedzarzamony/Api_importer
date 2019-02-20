@@ -1,7 +1,7 @@
 <?php 
 
-namespace Importer\Lib;
-use Importer\Lib\CsvFormat;
+namespace Importer\Format;
+
 class Importer 
 {
     private $data;

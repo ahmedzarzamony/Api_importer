@@ -1,6 +1,6 @@
 <?php 
 
-namespace Importer\Lib;
+namespace Importer\Format;
 
 class JsonFormat implements FormatInterface
 {
@@ -11,10 +11,13 @@ class JsonFormat implements FormatInterface
         $this->data = $data;
     }
 
-    public function isValid()
+    public function invalid($content)
     {
-        json_decode($this->data);
-        return (int)(json_last_error() == JSON_ERROR_NONE);
+        if(is_null($content))
+            return false;
+
+        json_decode($content);
+        return (int)(json_last_error() != JSON_ERROR_NONE);
     }
 
     public function getContent()
@@ -25,8 +28,8 @@ class JsonFormat implements FormatInterface
     public function ConvertToArray()
     {
         $content = $this->getContent();
-        if(is_null($content) || $this->isValid()){
-            throw new \Exception("The content of the given file is not valid.");
+        if($this->invalid($content)){
+            return "The content of the given file is not valid.";
         }
         return json_decode($content, true);
     }

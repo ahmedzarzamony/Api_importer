@@ -10,8 +10,8 @@
     ],
     "require": {},
     "autoload": {
-        "classmap": [
-            "lib"
-        ]
+        "psr-4": {
+            "Importer\\Format\\": "src"
+        }
     }
 }
