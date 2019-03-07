@@ -1,9 +1,13 @@
 <?php 
 
-namespace Importer\Format;
 
 
 require __DIR__.'/vendor/autoload.php';
+
+
+use Importer\Format\Importer;
+
+
 try{
     
     echo '<h3>CSV Started </h3><hr>';
